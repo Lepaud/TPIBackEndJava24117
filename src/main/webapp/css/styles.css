@@ -1,0 +1,528 @@
+/**
+ * 
+ */
+/* Resetear márgenes y padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.el-messiri-font {
+    font-family: "El Messiri", "sans-serif";
+    /*font-optical-sizing: auto;  da error en el https://validator.w3.org/*/
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* Estilos generales */
+body {
+    font-family: 'El Messiri', 'Josefin Sans', sans-serif;
+    background-color: #F5E9DB;     /* Color arena */
+}
+
+h1{
+    color: #009688;
+    text-align: center;
+    margin-top: 20px;
+}
+
+header {
+    /*border: 1px crimson solid; */
+    width: auto;                /*height: auto;*/
+    display: flex;
+    flex-direction: row;        /* dirección del eje flex. row es del default */
+    flex-wrap: wrap;            /*flex-basis: auto;*/
+    /*justify-content: space-between;*/    /*Eje princial: Distribuye los elementos horizontalmente */
+    justify-content: space-around;
+    align-items: center;        /*Eje secundario: Centra verticalmente los elementos */
+    background-color: #333;   /* Color de fondo del encabezado */
+    color: #fff;              /* Color de texto del encabezado */
+    padding: 20px;
+    box-shadow: 0 0 1.5rem rgba(209, 209, 68, 0.733);    /* text-shadow: 0 0 0.55rem rgb(209, 209, 68, 0.733); */
+    margin: 0 auto;
+    height: 140px;
+
+}
+
+/* -----------------  LOGO  -----------------*/
+
+.header-logo img {
+    /*border: 1px rgb(82, 214, 56) solid; */
+    height: 5rem;       /*1 rem=tamaño de fuente raíz*/
+    width: 5rem;
+    margin-left: 40px;
+}
+
+.header-logo img:hover {
+    /* border: 1px rgb(82, 214, 56) solid;  */
+    animation: logo-animation 0.50s infinite;
+    /* animation: <name> <duration> <timing-function>  <delay><iteration-count> <direction> <fill-mode> <play-state> */
+
+}
+
+@keyframes logo-animation {
+    0% {transform: translate(0, 0) rotate(90deg);}
+    50% {transform: translate(5px, 5px) rotate(5deg);}
+}
+
+/* -----------------  MENU HEADER  -----------------*/
+.menu {
+    /* Aquí definimos que el menú se expanda todo lo posible. Esto hace que el logo quede a la izquierda */
+    flex-grow: 1;
+}
+
+nav ul {
+    list-style-type: none;
+    text-align: center;             /*Define la posicion del menú*/
+
+}
+
+nav ul li {
+    display: inline;                    /*Para que el menu aparezca horizontal y entre en el ancho*/
+    margin-right: 50px;                 /*vertical-align: middle; /* Alinea verticalmente los elementos con la imagen */
+    font-size: 1.3rem;
+
+}
+
+nav ul li a {
+    color: #fff;
+    /* Color de los enlaces del menú */
+    text-decoration: none;
+    transition: color 0.3s ease;
+    /* Transición suave del color */
+    font-family: sans-serif;
+
+}
+
+/*TP: Utilizar al menos una animación, transformación o una transición. */
+nav ul li a:hover {
+    font-style: italic;
+    color: #ffd700;
+    /* Cambia el color al pasar el mouse */
+    /* text-decoration: underline;*/
+    /* Agrega un subrayado al pasar el mouse sobre los enlaces */
+}
+
+
+/*
+.main-background {
+    border: 2px rgb(43, 207, 28) solid;  
+    position: relative;     
+    padding: 20px;
+    border-radius: 10px;
+    /*box-shadow: 0 0 10px rgba(0, 0, 0, 1);     
+}
+*/
+
+
+
+/* -----------------  MAIN  background -----------------*/
+
+.main-background {
+    position: relative; /* Establecer la posición relativa para que los pseudoelementos se posicionen correctamente */
+    padding: 5px; /* Agregar un relleno para separar el contenido del borde */
+}
+
+.main-background::after {
+    content: '';                  /* Agregar contenido al pseudoelemento */
+    position: absolute;           /* Establecer la posición absoluta */
+    top: 0;                       /* Alinear el pseudoelemento arriba */
+    left: 0;                      /* Alinear el pseudoelemento a la izquierda */
+    width: 100%;                  /* Establecer el ancho al 100% */
+    height: 100%;                 /* Establecer la altura al 100% */
+    background-image: url('../../static/img/fondo.jpg');  /* Ruta de la imagen de fondo */
+    background-size: cover;       /* Ajustar el tamaño de la imagen para cubrir todo el contenedor */
+    background-repeat: no-repeat; /* Evitar que la imagen de fondo se repita */
+    background-position: center;  /* Centrar la imagen de fondo */
+    /*background-color: rgba(255, 255, 255, 0.5); /* Color blanco con opacidad del 50% */
+    z-index: -1;                  /* Colocar el pseudoelemento detrás del contenido */
+    opacity: 0.40;                /*Establece la opacidad de la imagen de fondo (valor entre 0 y 1)*/
+}
+
+
+
+/* If the X property has four values: top, right, bottom, left */
+/* If the X property has tree values: top, right, bottom */
+/* If the X property has two values: bottom left */
+/* If the X property has one values: all */
+
+.card-banner {
+    /*border: 2px rgb(61, 38, 190) solid; */
+    margin: 5px auto 5px auto;
+    text-align: center;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.6);    /* Color blanco con opacidad del 50%*/
+    max-width: 850px;
+    /* margin: 0 0 20px 0 ; */
+}
+
+.card-banner p{
+    max-width: 800px;
+    text-align: center;
+    margin: auto;
+}
+
+
+/* -----------------  LINKS  -----------------*/
+
+.links {
+    /*box-shadow: 0 0 10px rgba(182, 36, 36, 0.1);    */
+    margin: 10px;
+    margin-top: 20px;
+    /*padding: 1em 2em;*/    
+    background-color: #f0f8eb; /* Verde claro */
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    display: flex; flex-direction: column; align-items: center;
+}
+
+
+
+.links h2 {
+    border: 100px #af7373 inset; 
+    border-radius: 10px;
+    padding: 5px;  
+    color: #333333;
+    border-width: 2px;
+    background-color: #e4d0b2;
+    min-width: 65% ;
+    /* max-width: 500px; */
+
+    
+}
+
+.links ul {
+    /*border: 2px rgb(98, 56, 214) solid; */
+    list-style-type: none;
+    display: flex; flex-direction: column; align-items: center;
+    margin-bottom: 30px;
+
+    
+}
+
+
+
+.links ul li a {
+    text-decoration: none;
+    /*color: #1e90ff;*/
+    color: #2d74bb;
+    /*font-weight: bold;*/
+}
+.links ul li a:hover {
+    color: #c74c1f;
+}
+
+
+/* Estilos de imagen */
+.image {
+    max-width: 100%;
+    height: 100%;
+    margin-bottom: 3%;
+
+}
+
+/* -----------------  MEDIA QUERY  -----------------*/
+/* TP: Debe ser totalmente responsive con mínimo 3 puntos de corte con media querys para 3 tamaños de dispositivos (PC escritorio, Tablet, Celular).  */
+
+/* Media query para dispositivos con ancho máximo de 1024px (PC) */
+@media only screen and (max-width: 1024px) {
+
+    /* Estilos para PC */
+    nav ul li {
+        display: inline-block;         /* Cambia los elementos del menú a bloque */
+        text-align: center;     /* Centra los elementos del menú */
+        font-size: 2rem;
+        /* Alinea y separa los elementos del menú */
+    }
+}
+
+/* Media queries para dispositivos */
+@media only screen and (max-width: 768px) {
+    /* Estilos para tablet */
+    nav ul li {
+        display:inline-block;           /* Cambia los elementos del menú a bloque */
+        text-align: center;       /* Centra los elementos del menú */
+        margin: 5px 10px;  
+        font-size: 0.8rem;   /* Alinea y separa los elementos del menú */
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    /* Estilos para móvil */
+    nav ul li {
+        margin-right: 0;         /* Elimina el margen derecho en móvil */
+    }
+    .header-logo img{
+        height: 3rem;
+        width: 3rem;
+        margin-left: 10px;
+    }
+}
+
+
+/* -----------------  PERSONAJES  -----------------*/
+
+/* TP: Poseer una estructura HTML maquetada con Flexbox y/o Grid. */
+/* Estilos para el grid de los personajes */
+.characters {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.character {
+    background-color: #fff;                     /* Color de fondo del personaje */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);     /* Sombra suave */
+}
+
+.character img {
+    /*border: 2px rgb(82, 214, 56) solid;  */
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: 1/1.2;
+    border-radius: 5px;
+}
+
+.character img:hover {
+    border: 1px rgb(177, 87, 132) solid; 
+    border-width: medium;
+    box-shadow: 10px 10px 10px 1px rgba(0, 0, 0, 0.2); 
+    animation: character-animation 0.50s ;
+    /* animation: <name> <duration> <timing-function>  <delay><iteration-count> <direction> <fill-mode> <play-state> */
+
+}
+
+@keyframes character-animation {
+    /* 0% {transform: translate(0, 0) rotate(90deg);} */
+    50% {transform: translate(0px, 10px) ;}
+    
+    /* 50% {transform: translate(0, 0) rotate(45eg);} */
+}
+
+
+.character h2 {
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.character p {
+    margin-bottom: 10px;
+}
+
+
+
+/* -----------------  INDEX  -----------------*/
+.Index-menu-general {
+    /*border: 1px rgb(104, 194, 96) solid; */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.Index-menu {
+    /*border: 1px rgb(57, 23, 136) solid; */
+    /* background-color: #af7373;      */
+    /* background-color: #fff;   */
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(8, 1, 1, 0.1);   
+    background-color: rgba(255, 255, 255, 0.6);    /* Color blanco con opacidad del 50%*/ 
+}
+
+.Index-menu img {
+    /*border: 2px rgb(82, 214, 56) solid;  */
+    max-width: 100%;
+    height: 220px;
+    width: auto ;
+    /* aspect-ratio: 1/0.8; */
+    border-radius: 5px;
+    object-fit: cover;
+
+}
+
+
+.Index-menu img:hover {
+    border: 1px rgb(150, 98, 124) solid; 
+    border-width: medium;
+    box-shadow: 10px 10px 10px 1px rgba(0, 0, 0, 0.2); 
+    transition: transform 0.3s ease-in-out;
+    animation: index-animation 2s infinite; ;
+    /* animation: <name> <duration> <timing-function>  <delay><iteration-count> <direction> <fill-mode> <play-state> */
+
+}
+
+@keyframes index-animation {
+    /* 0% {transform: translate(0, 0) rotate(90deg);} */
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+
+}
+
+
+.Index-menu h2 {
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.Index-menu p {
+    margin-bottom: 10px;
+}
+
+
+
+/* -----------------  FOOTER  -----------------*/
+
+footer {
+    /*border: 2px rgb(82, 214, 56) solid;  */
+    position: relative ;
+    /*position: absolute ;*/
+    top: 0;
+    width: 100%;
+    height: 140px;
+    background-color: #333;    
+    color: #ffe551;    
+    padding: 20px;    
+    text-align: center;
+    font-family: 'Arial';
+    font-size: 1.2rem;
+
+
+    /*Eje secundario: Centra verticalmente los elementos */
+}
+footer a{
+    text-decoration: none;
+    color: #FFFFFF;
+    padding: 15px;
+    border-radius: 20px;
+    background-color:#524c4c;
+    height: 50px;
+    transition: all .5s ease-in;
+
+}
+footer a:hover{
+    background-color:#e95321;
+}
+
+.link_crud {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px;
+    gap:100px;
+    
+   
+    
+}
+
+
+
+
+
+
+
+
+/**********************  NATY ******************************/
+
+.container2 {
+    
+    display: grid;
+    /*grid-template-columns: 40px ;*/
+    grid-gap: 40px;
+    grid-template-rows: 50px;
+    margin: auto;
+    /*background-color: #f8f7f1;*/
+    background-color: #e7e1bf;
+    border-radius: 2em;
+    padding: 2em;
+    max-width: 800px;               
+    margin: 0 auto;
+}
+
+.container-recetas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 20px;
+    margin: 20px;
+    background-color: #f8f7f1;
+    border-radius: 2em;
+    padding: 2em;
+    text-align: center;
+
+}
+
+
+.recipe {
+    padding: 20px;
+   /*text-align: center;*/
+    margin-bottom: 30px;
+    padding: 10px;
+    border-radius: 5px;
+
+}
+
+
+.recipe img {
+    max-height: 200px;               /* Ajusta la altura máxima de la imagen */
+}
+
+.recipe a {
+    display: block;
+    margin-top: 10px;
+
+}
+
+
+
+.recipe h2 {
+    /*border: 2px rgb(115, 186, 214) solid; */
+    color: #009688;
+    margin-bottom: 10px;
+    font-size: 24px;
+}
+
+.recipe p {
+    font-weight: bold;
+    margin-bottom: 5px;
+    text-align: left;
+
+}
+
+
+.recipe a {
+    text-decoration: none;
+    color: #009688;
+    font-weight: bold;
+    margin-top: 80px;
+}
+
+.ingredientes {
+    margin-top: 40px;
+    margin-bottom: auto;
+
+}
+
+.relleno {
+    margin-top: 30px;
+}
+
+.preparacion {
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding: 10px;                    
+
+}
